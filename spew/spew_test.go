@@ -23,7 +23,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/davecgh/go-spew/spew"
+	"github.com/art-frela/go-spew/spew"
 )
 
 // spewFunc is used to identify which public function of the spew package or
@@ -151,8 +151,12 @@ func initSpewTests() {
 		slice []string
 		m     map[string]int
 	}
-	dt := depthTester{indirCir1{nil}, [1]string{"arr"}, []string{"slice"},
-		map[string]int{"one": 1}}
+	dt := depthTester{
+		indirCir1{nil},
+		[1]string{"arr"},
+		[]string{"slice"},
+		map[string]int{"one": 1},
+	}
 
 	// Variable for tests on types which implement error interface.
 	te := customError(10)

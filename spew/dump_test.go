@@ -67,7 +67,7 @@ import (
 	"testing"
 	"unsafe"
 
-	"github.com/davecgh/go-spew/spew"
+	"github.com/art-frela/go-spew/spew"
 )
 
 // dumpTest is used to describe a test to be performed against the Dump method.
@@ -848,7 +848,7 @@ func addFuncDumpTests() {
 	addDumpTest(nv2, "(*"+v2t+")(<nil>)\n")
 
 	// Function with multiple params and multiple returns.
-	var v3 = func(i int, s string) (b bool, err error) {
+	v3 := func(i int, s string) (b bool, err error) {
 		return true, nil
 	}
 	nv3 := (*func(int, string) (bool, error))(nil)
@@ -1038,5 +1038,4 @@ func TestDumpSortedKeys(t *testing.T) {
 	if s != expected {
 		t.Errorf("Sorted keys mismatch:\n  %v %v", s, expected)
 	}
-
 }

@@ -72,7 +72,7 @@ import (
 	"testing"
 	"unsafe"
 
-	"github.com/davecgh/go-spew/spew"
+	"github.com/art-frela/go-spew/spew"
 )
 
 // formatterTest is used to describe a test to be performed against NewFormatter.
@@ -1228,7 +1228,7 @@ func addFuncFormatterTests() {
 	addFormatterTest("%#+v", nv2, "(*"+v2t+")"+"<nil>")
 
 	// Function with multiple params and multiple returns.
-	var v3 = func(i int, s string) (b bool, err error) {
+	v3 := func(i int, s string) (b bool, err error) {
 		return true, nil
 	}
 	nv3 := (*func(int, string) (bool, error))(nil)
